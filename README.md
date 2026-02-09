@@ -36,22 +36,11 @@ pip install -r requirements.txt
 
 1. Создайте базу данных PostgreSQL:
 
-**Вариант 1 - через psql (рекомендуется):**
-```bash
-psql -U postgres
-```
-Затем в psql выполните:
-```sql
-CREATE DATABASE netology_orm_migrations;
-\q
-```
-
-**Вариант 2 - через командную строку:**
 ```bash
 createdb -U postgres netology_orm_migrations
 ```
 
-2. Настройте подключение в `website/settings.py` или создайте `website/settings_local.py`:
+2. Настройте подключение в `website/settings.py`:
 ```python
 DATABASES = {
     'default': {
@@ -84,22 +73,6 @@ python manage.py runserver
 
 4. Откройте браузер по адресу http://127.0.0.1:8000/school/
 
-## Полезные команды
-
-Проверить данные в БД:
-```bash
-python check_data.py
-```
-
-Создать новую миграцию:
-```bash
-python manage.py makemigrations school
-```
-
-Применить миграции:
-```bash
-python manage.py migrate
-```
 
 ## Модели
 
